@@ -1,0 +1,298 @@
+@page "/design-guidelines"
+
+<h1 class="px-4 md:px-8 text-pretty">Design Guidelines</h1>
+
+@*<div class="grid grid-cols-6 md:grid-cols-12 gap-6">
+    <div class="col-span-6">
+        <svg xmlns="http://www.w3.org/2000/svg" height="16" width="14" viewBox="0 0 448 512" fill="currentColor">
+            <path d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 
+0 482.3C0 498.7 13.3 512 29.7 512H418.3c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304H178.3z"></path>
+        </svg>
+    </div>
+    <div class="col-span-6">
+        <p></p>
+        <p></p>
+    </div>
+</div>*@
+
+
+<div href="#" class="flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700 px-4 md:px-8">
+    @* <img class="object-cover w-full rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-s-lg" src="/docs/images/blog/image-4.jpg" alt=""> *@
+    @* <div class="object-cover w-full rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-s-lg"> *@
+    <svg class="object-cover w-full rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-s-lg"  xmlns="http://www.w3.org/2000/svg" height="16" width="14" viewBox="0 0 448 512" fill="currentColor">
+        <path d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 
+    0 482.3C0 498.7 13.3 512 29.7 512H418.3c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304H178.3z"></path>
+    </svg>
+    @* </div> *@
+    <div class="flex flex-col justify-between p-4 leading-normal">
+        <h3 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Owned by Kevin Vavelin</h3>
+        <h5 class="mb-3 font-normal text-gray-700 dark:text-gray-400">Last updated: Nov 14, 2023.</h5>
+        <h5 class="mb-3 font-normal text-gray-700 dark:text-gray-400">5 min read</h5>
+    </div>
+</div>
+
+
+<p>
+    Cette page a pour but de vous permettre d’apréhender le design system de
+    la société e-Fusion en attendant que nous créeons le site de présentation
+    de toute l’identité d’e-Fusion.
+</p>
+
+<h2>Design web (EFusion.Web, EFusion.App, EFusion.Admin)</h2>
+<p>
+    Les éléments de design web sont construit afin de permettre un
+    développement aisé et respecte les espacements et tailles
+    TailwindCSS autant que possible.
+</p>
+
+<h2>Les headings (H1, H2, H3, H4, H5)</h2>
+<p>Toutes les bannières sont construites selon ce format : </p>
+<p>
+    H1 pour le titre (qui est transformé avec une taille H2 lorsque
+    l’on est sur mobile), p pour le contenu.
+</p>
+<p class="bg-usual-50 text-usual-950 dark:bg-usual-950 dark:text-usual-50">
+    Les boutons gradients sont utilisés pour signifier une
+    action importante primaire.
+</p>
+
+<img src="blob:https://codetics.atlassian.net/065d486e-bfbe-4c7b-84db-0dc01088e4d9" alt="an image sample">
+
+<p>
+    Voici un exemple. “Prenez la route en toute sérénité” est donc un H1, et tout les autres titres sont des H2.
+    Et cela vaut pour tout le contenu du site. le H1 ne sert qu’au titre de la bannière.
+</p>
+
+
+<h2>Les couleurs</h2>
+
+<h3>Le fond</h3>
+
+<p>
+    Les fonds à utiliser par defaut sur toutes les pages sont : usual-50 pour le mode light,
+    usual-950 pour le mode dark. Vous devez donc impérativement veillez à ce que votre
+    fichier _Layout.cshtml dispose au minimum de ces classes dans le body :
+</p>
+
+<code class="bg-usual-400 dark:bg-usual-600">
+    &lt;body class="bg-usual-50 text-usual-950 dark:bg-usual-950 dark:text-usual-50"&gt;
+</code>
+
+<h3>
+    Boutons et textes
+</h3>
+
+<p>
+    La couleur primaire d’e-Fusion est la primary-500. Pour tout élément important,
+    veillez donc à utiliser cette couleur. La combinaison est primary-500 pour le mode
+    light et primary-300 pour le mode dark. Si ce sont des éléments qui peuvent être survolé,
+    la couleur passe en primary-300 pour le mode light et primary-500 pour le mode sombre. Voici
+    un exemple pour les boutons :
+</p>
+
+<code class="bg-usual-400 dark:bg-usual-600">
+    &lt;button class="bg-primary-500 hover:bg-primary-300 dark:bg-primary-300
+    dark:hover:bg-primary-500 text-usual-50"&gt;&lt;/button&gt;
+</code>
+
+<p>
+    Ou encore un exemple pour les liens :
+</p>
+
+<code class="bg-usual-400 dark:bg-usual-600">
+    &lt;a href="#" target="_blank" class="text-primary-500 hover:text-primary-300 dark:text-primary-300
+    dark:hover:text-primary-500"&gt;&lt;/a&gt;
+</code>
+
+
+<img src="" alt="another img">
+
+<div></div>
+
+<p>
+    Les boutons importants ont un gradient, voici les classes que vous devrez utiliser pour ce type de boutons :
+</p>
+
+<code class="bg-usual-400 dark:bg-usual-600">
+    &lt;button class="bg-gradient-to-br from-primary-500 to-primary-200 hover:from-primary-400 hover:to-secondary-500
+    text-usual-50"&gt;&lt;/button&gt;
+</code>
+
+<p>
+    Les boutons importants restent les même en mode light et en mode dark.
+</p>
+
+<img src="" alt="another img">
+
+<div></div>
+
+<p>
+    Les boutons à plus petites importances sont toujours en primary mais dans une teinte plus sombre. Le code couleur
+    est donc primary-950 et son survol usual-700.
+</p>
+<p>Le code couleur est donc : </p>
+
+<code class="bg-usual-400 dark:bg-usual-600">
+    &lt;button class="bg-primary-950 hover:bg-usual-700 dark:bg-usual-700 dark:hover:bg-primary-950 text-usual-50"&gt;&lt;/button&gt;
+</code>
+
+<img src="" alt="another img">
+
+<div></div>
+
+<p>
+    Les boutons sans remplissages (donc souvent appelé les boutons outline) suivent le même code couleur mais en
+    utilisant les classes border au lieu des bg. Exemple :
+</p>
+
+<code class="bg-usual-400 dark:bg-usual-600">
+    &lt;button class="bg-transparent border border-primary-500 hover:border-primary-300 hover:bg-primary-300
+    dark:border-primary-300 dark:hover:border-primary-500 dark:hover:bg-primary-500 hover:text-usual-50 text-primary-500
+    dark:text-primary-300"
+    /&gt;
+</code>
+
+<img src="" alt="another img">
+
+<div></div>
+
+<p>
+    Les boutons désactivés suivent un style un peu particulier, ils sont visibles mais non cliquable. Voici les classes qu’ils utilisent :
+</p>
+
+<code class="bg-usual-400 dark:bg-usual-600">
+    &lt;button disabled class="bg-usual-100 dark:bg-usual-800 text-usual-400"&gt;&lt;/button&gt;
+</code>
+
+
+<h2>Les espacements</h2>
+
+<p>
+    Le corps de base du site a une marge intérieur de 32px horizontale par defaut en version desktop et de 16px en version mobile.
+    Ce qui vous donnera donc ceci au minimum par defaut lorsque vous créez du contenu d’une page :
+</p>
+
+<code class="bg-usual-400 dark:bg-usual-600">
+    <section class="px-4 md:px-8"></section>
+</code>
+
+<p>
+    Pour le contenu type bannière ou section comme la table des prix, une marge interieur verticale de 80px en version desktop et de 40px
+    en version mobile est appliqué. Ce qui vous donnera donc ceci :
+</p>
+
+<code class="bg-usual-400 dark:bg-usual-600">
+    &lt;header class="px-4 md:px-8 py-10 md:py-20"&gt;&lt;/header&gt;
+</code>
+
+<p>
+    Lorsque vous rencontrez un design possédant 2 colonnes, vous utiliserez une grid qui prend 6 colonnes en mobile et 12 colonnes en
+    desktop. L’espacement par défaut entre ces colonnes sont de 24px. Les éléments devront être positionné correctement en version mobile,
+    donc veillez à respecter l’ordre mobile et desktop donc. Lorsque vous vous retrouverez sur des éléments intérieurs rapprochés, la règle
+    par défaut est de supposé qu’il y ai un espacement de 10px (au maximum 16px)
+</p>
+
+<p>
+    Prenons pour exemple ce type d'élément dans notre design :
+</p>
+
+<img src="" alt="another img">
+
+<p>
+    Pour réaliser ce type de structure nous aurons donc :
+</p>
+
+<pre class="bg-usual-400 dark:bg-usual-600"><code class="bg-usual-400 dark:bg-usual-600">
+&lt;section class="px-4 md:px-8 py-10 md:py-20"&gt;
+  &lt;div class="grid grid-cols-6 md:grid-cols-12 gap-6"&gt;
+    &lt;div class="col-span-6"&gt;
+      &lt;h1&gt;A propos de nous&lt;/h1&gt;
+      &lt;h2&gt;Notre histoire&lt;/h2&gt;
+    &lt;/div&gt;
+    &lt;div class="col-span-6"&gt;
+      &lt;div class="grid grid-cols-4 gap-2.5"&gt;
+        &lt;div class="col-span-2 bg-usual-100"&gt;
+        &lt;/div&gt;
+        &lt;div class="col-span-2 bg-usual-100"&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/section&gt;
+</code></pre>
+
+<h2>
+    Les boutons
+</h2>
+
+<p>
+    Les marges intérieures des boutons par defaut est de 16px en horizontale et 10px en verticale. Ce qui nous donne
+    donc pour un bouton primaire de niveau 2 :
+</p>
+
+<code class="bg-usual-400 dark:bg-usual-600">
+    &lt;button class="px-4 py-2.5 bg-primary-500 dark:bg-primary-300 hover:bg-primary-300 dark:hover:bg-primary-500
+    text-usual-50"&gt;&lt;/button&gt;
+</code>
+
+<img src="" alt="another img">
+
+<p>
+    Vous n’avez pas besoin de configurer les espacements des boutons, ils sont déjà préconfiguré dans votre site.css 😉
+</p>
+
+<h2>
+    Les champs de saisie de texte
+</h2>
+
+
+<p>
+    Le design des champs de textes est très soigné et méticuleux sur son implémentation. Nous vous avons donc préparé
+    un snippet de code permettant de l’obtenir rapidement avec TailwindCSS.
+</p>
+
+<img src="" alt="another img">
+
+<p>
+    Pour obtenir ceci donc, voici le code snippet à utiliser (pensez à remplacer par votre variable dans “asp-for” et
+    “asp-validation-for” si vous faîtes des copier coller) :
+</p>
+
+<div class="bg-usual-400 dark:bg-usual-600">
+    <pre class="bg-usual-400 dark:bg-usual-600"><code class="bg-usual-400 dark:bg-usual-600">
+&lt;div class="flex flex-col gap-2 w-full"&gt;
+    &lt;div class="px-2 py-3 rounded-lg border border-usual-200 dark:border-usual-600 bg-white dark:bg-usual-800 flex 
+    flex-row gap-2 items-center justify-between w-full"&gt;
+        &lt;label class="font-bold" asp-for="MODELPROPERTY"&gt;&lt;/label&gt;
+        &lt;input asp-for="MODELPROPERTY" class="border-0 outline-0 focus:ring-0 w-full bg-transparent rounded-lg 
+        caret-primary-500 dark:caret-primary-800" /&gt;
+    &lt;/div&gt;
+    &lt;span class="text-negative-500 dark:text-negative-300 font-bold" asp-validation-for="MODELPROPERTY"&gt;&lt;/span&gt;
+&lt;/div&gt;
+</code></pre>
+</div>
+<p>
+    Ce code vous donnera ceci en résultat :
+</p>
+
+<img src="" alt="another img">
+
+<h2>
+    Iconographies
+</h2>
+
+<p>
+    Les icones de notre système ne sont pas encore tout a fait optimisé pour TailwindCSS, voici donc la liste des
+    correspondances avec FontAwesome qui seront à utiliser :
+</p>
+
+<img src="" alt="another img">
+
+<code class="bg-usual-400 dark:bg-usual-600">
+    &lt;i class="fa-regular fa-table-layout"&gt;&lt;/i&gt;
+</code>
+
+
+@code {
+
+}

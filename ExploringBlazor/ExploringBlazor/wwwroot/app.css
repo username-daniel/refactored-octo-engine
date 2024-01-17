@@ -1,0 +1,66 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    p, pre, code, span {
+        @apply text-sm;
+    }
+
+    button {
+        @apply px-4 py-2.5 rounded-lg transition-all duration-300 font-bold italic leading-base;
+    }
+
+    a {
+        @apply transition-all duration-300 leading-base;
+    }
+
+    textarea {
+        @apply p-0;
+        resize: none;
+    }
+
+    input[type] {
+        @apply p-0;
+    }
+
+    h1 {
+        @apply text-[2rem] md:text-5xl font-extrabold italic leading-10 md:leading-[58px];
+    }
+
+    h2 {
+        @apply text-[2rem] font-extrabold italic leading-10;
+    }
+
+    h3 {
+        @apply text-[1.37rem] font-extrabold italic leading-7;
+    }
+
+    h4 {
+        @apply text-base font-extrabold italic leading-5;
+    }
+
+    h5 {
+        @apply text-sm font-bold leading-base;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    ::-webkit-calendar-picker-indicator {
+        filter: invert(1);
+    }
+}
+
+@keyframes scrollInifinite {
+    0% {
+        transform: translateX(0%);
+    }
+
+    50% {
+        transform: translateX(-300%);
+    }
+
+    100% {
+        transform: translateX(0%);
+    }
+}
