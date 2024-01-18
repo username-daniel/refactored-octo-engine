@@ -1,0 +1,129 @@
+@page "/ios"
+
+<PageTitle>e-Fusion iOS</PageTitle>
+
+<AuthorTag Name="Kevin Vavelin" Date="Oct 20, 2023" Time="2"/>
+
+<div>
+    <h2>e-Fusion iOS</h2>
+    <p>
+        Le projet iOS e-Fusion utilise un nombre d'outil essentiel pour
+        assurer son développement, ses tests ainsi que sa mise en production.
+        La liste ci-dessous vous permet d'avoir une base de connaissance
+        solide afin de travailler sur le projet et être efficace.
+    </p>
+</div>
+
+<div>
+    <h2>Outils indispensable</h2>
+    <p>
+        Pour pouvoir travailler sur le projet, il faut au préalable être
+        équipé d'un Mac et avoir Xcode d'installer :
+    </p>
+
+
+    <h3><a href="https://developer.apple.com/xcode/"></a>Xcode</h3>
+
+    <p>
+        Le projet utilise également les SF Symbols pour adopter le système
+        d'icône d'Apple et réduire la charge des designers intervenant
+        sur le projet
+    </p>
+    <h3><a href="https://developer.apple.com/design/resources/#sf-symbols"></a>SF Symbols</h3>
+
+    <p>Les tests unitaires et d'intégrations seront executés sur Xcode Cloud </p>
+    <h3><a href="https://developer.apple.com/xcode-cloud/"></a>Xcode Cloud</h3>
+</div>
+
+<div>
+    <h2>Developpement</h2>
+    <p>
+        Le projet est hébergé sur Azure DevOps, il est accessible sur le repository suivant
+        :
+        <h3>
+            <a href="">EFusion-iOS</a>
+        </h3>
+        Pour push sur le projet vous devrez générer votre clé SSH si vous accédez via ssh
+        ou générer vos git credentials. Contactez Philippe ou Kevin pour ajouter votre accès
+        au repository.
+        Le développement se fait en utilisant le langage Swift, Swift est le langage de
+        programmation utilisé par Apple et de nombreuses entreprises afin de concevoir des
+        applications sur les plateformes Apple. Pour en apprendre plus sur Swift :
+    </p>
+    <h6>
+        <a href="https://developer.apple.com/swift/">Swift</a>
+    </h6>
+    <h6>
+        <a href="https://docs.swift.org/swift-book/documentation/the-swift-programming-language/">
+            Le manuel de Swift
+        </a>
+    </h6>
+    <h6>
+        <a href="https://developer.apple.com/swift-playgrounds/">
+            Apprendre Swift avec Swift Playground
+        </a>
+    </h6>
+    <h6>
+        <a href="https://developer.apple.com/learn/curriculum/">
+            Télécharger les livres pour apprendre Swift sur Apple Books
+        </a>
+    </h6>
+    <h6>
+        <a href="https://education-static.apple.com/coding-club-kit/appworkbook.key/">
+            Penser en Swift
+        </a>
+    </h6>
+
+
+</div>
+
+<div>
+    <h2>Design</h2>
+    <p>
+        L'application e-Fusion suit scrupuleusement les human guidelines d'Apple pour concevoir son application.
+        Vous pouvez en apprendre plus sur les guidelines :
+    </p>
+    <a href="https://developer.apple.com/design/human-interface-guidelines/"> Human Interface Guidelines</a>
+    <a href="https://developer.apple.com/design/human-interface-guidelines/designing-for-ios">Human Guidelines iOS</a>
+    <p>
+        e-Fusion et Codetics encourage vivement à regarder également les videos gratuites disponibles pour vous former
+        et en apprendre d'avantage.
+    </p>
+
+    <p>
+        L'application sera design en utilisant l'outil gratuit
+        <h6>
+            <a href="https://figma.com/">Figma</a>
+        </h6>, si vous avez besoin d'éléments iOS il est fortement
+        conseiller d'utiliser la
+        <h6>
+            <a href="https://www.figma.com/community/file/1248375255495415511">librairie Figma</a>
+        </h6> d'Apple.
+    </p>
+</div>
+
+<div>
+    <h2>Support multi langue</h2>
+
+    <p>L'application iOS e-Fusion supporte les langues suivantes : Anglais, Français.</p>
+
+    <p>
+        Elle utilise les strings catalog pour ne raté aucune traduction :
+        <h6>
+            <a href="https://developer.apple.com/documentation/xcode/localizing-and-varying-text-with-a-string-catalog">
+                Supporter plusieurs langues dans son application
+            </a>
+        </h6>
+    </p>
+
+    <p>
+        Pour en apprendre plus :
+        <h6>
+            <a href="https://www.fline.dev/the-missing-string-catalogs-faq-for-xcode-15/">Les strings catalogs</a>
+        </h6>
+    </p>
+</div>
+
+@code {
+
+}

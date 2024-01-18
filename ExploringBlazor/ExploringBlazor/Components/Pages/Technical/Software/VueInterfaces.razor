@@ -1,0 +1,223 @@
+@page "/views"
+<PageTitle>e-Fusion - Vues</PageTitle>
+
+<AuthorTag Name="Kevin Vavelin" Date="Oct 30, 2023" Time="8"></AuthorTag>
+<!-- @formatter:on -->
+
+<div>
+    <h2>Explications</h2>
+    <p>
+        Ce wiki servira de base de connaissances pour les designers afin de leur permettre de
+        retranscrire chaque vue et donc créer des interfaces intuitives et adaptés aux
+        plateformes web et mobile
+    </p>
+</div>
+
+<div>
+    <h2>Répertoire des vues</h2>
+
+    <div>
+        <h3>Connexion</h3>
+        <p>
+            La vue connexion est la vue principal de chaque application. Elle doit contenir un champ texte adresse
+            email et et un champ texte mot de passe.
+            Elle doit également permettre d'aller vers des actions pour réinitialiser le mot de passe en cas d'oubli de
+            celui-ci, et de créer un compte rapidement.
+        </p>
+
+        <p>
+            Dans le cas ou certaines plateformes permet des connexions en utilisant des méthodes d'authentification
+            alternatives à la combinaison email/mot de passe, ajoutez une méthode pour l'utiliser. Cette fonctionnalité
+            n'est disponible que si l'utilisateur a déjà utiliser l'appareil pour s'authentifier.
+        </p>
+
+        <p>
+            Exemple : Une première connexion aux services sur Android ou iOS stock une clé sur l'appareil tant que
+            l'application n'est pas supprimé. Il est donc possible d'utiliser les lecteurs d'empreintes ou
+            reconnaissance faciale pour faciliter la connexion futur.
+        </p>
+
+        <p>
+            À la connexion, permettre de se connecter via SSO (gmail, Apple, LinkedIn, etc).
+        </p>
+    </div>
+
+    <div>
+        <h3>
+            Créer un compte
+        </h3>
+
+        <p>
+            La vue créer un compte permet à tout les visiteurs et curieux de créer un compte sur e-Fusion.
+            Elle doit contenir des informations essentiels pour la création d'un compte et l'utilisation des services
+            e-Fusion : Nom, Prénom, Numéro de téléphone, Adresse email, Mot de passe.
+        </p>
+        <p>
+            L'utilisateur devra obtenir une confirmation visuel que son compte a bien été crée et qu'il devra valider
+            son action par mail pour confirmer la création.
+        </p>
+        <p>Permettre de créer un compte à partir du SSO (Gmail, Apple, LinkedIn, etc).</p>
+    </div>
+
+    <div>
+        <h3>Réinitialisation du mot de passe</h3>
+        <p>
+            La vue de réinitialisation de mot de passe doit être la plus simple possible, un champ de texte pour saisir
+            l'adresse email et c'est tout. Pour des raisons de sécurité, aucune indication en cas d'erreur concernant
+            un compte existant ou non devra être affiché. En revanche, un simple message d'erreur invitant à bien
+            vérifier l'adresse email doit être mentionné, et dans le cas de 3 essais infructueux, proposer la création
+            d'un compte.
+        </p>
+    </div>
+    <div>
+        <h3>Configuration d'un nouveau profil</h3>
+        <p>
+            Lorsqu'un utilisateur est fraîchement inscrit, il devra configurer son profil. Les informations essentielles
+            sont :
+        </p>
+        <p>Adresse postale (pour l'envoi d'une carte The ONE)</p>
+        <p>
+            Le modèle et la marque du véhicule utilisé ainsi que sa plaque d'immatriculation (pour s'assurer de la
+            disposition d'un véhicule électrique et l'analyse des modèles les plus utiliser par les utilisateurs pour
+            les rapports de performances et utilisation d'e-Fusion).
+        </p>
+    </div>
+
+    <div>
+        <h3>Vue carte (Map)</h3>
+        <p>
+            La vue affichant la carte avec les chargeurs sert à visualiser tout les chargeurs dans un rayon de 1km
+            autour de la position de l'utilisateur. Le champ de recherche apparait grâce à la barre de navigation
+            (situé en bas ou en haut) et devra afficher les filtres également dans celui-ci qui sont :
+        </p>
+
+        <ul>
+            <li>La borne la plus proche</li>
+            <li>La borne la moins chère</li>
+            <li>LA borne la plus puissante</li>
+        </ul>
+
+        <p>
+            L'interface devra reprendre sensiblement les codes d'Apple Maps pour iOS et Google Maps pour Android. Par
+            exemple, le bandeau en bas de la vue pour afficher/rechercher les informations importantes et récentes.
+        </p>
+        <p>
+            Les informations essentielles à avoir : Les points de charge, ils devront avoir la forme et le code couleur
+            d'e-Fusion. Les codes couleurs sont les suivants :
+        </p>
+        <ul>
+            <li>Violet (Primary) pour une borne disponible,</li>
+            <li>Rouge (Secondary) pour une borne occupé.</li>
+            <li>Orange pour une borne réservée,</li>
+            <li>Gris pour une borne indisponible/ Cassée/ HS</li>
+        </ul>
+
+        <p>À la sélection d’une borne, des information sur l’interface sont remontées : </p>
+        <ul>
+            <li>L’adresse de la borne</li>
+            <li>Le nom de la borne</li>
+            <li>la distance de la borne</li>
+            <li>la liste des connecteurs qui contient</li>
+            <ul>
+                <li>la puissance,</li>
+                <li>le type de connecteur,</li>
+                <li>type de charge,</li>
+                <li>prix du connecteur</li>
+            </ul>
+            <li>Conditions d’accès ( parking Fermé, code du Portail…)</li>
+        </ul>
+
+        <p>La navigation vers un point de charge devra également être pris en charge. La route sera affiché directement
+            sur la carte et lorsque l'on valide le trajet alors il faudra lancer la fonctionnalité navigation intégré
+            aux composants MapKit pour iOS et Google Maps pour Android.</p>
+        <p>Lorsque la navigation est choisie, la fonction de réservation sur la borne est activée. L’utilisateur aura 15
+            minutes de réservation pour aller charger. L’icône et la couleur de la charge sera changée en
+            conséquence.</p>
+        <p>Si la durée du trajet est supérieure à 15 minutes, il ne pourra pas être autorisé à réserver.</p>
+        <p>L’utilisateur ne pourra réserver q’une seule borne à la fois.</p>
+    </div>
+
+    <div>
+        <h3>Vue Carte The ONE</h3>
+        <p>La vue carte The ONE doit permettre son enregistrement sur l'appareil, et également de le rajouter à Apple
+            Wallet, Samsung Wallet ou Google Wallet afin de permettre l'utilisation en sans contact comme Apple Pay
+            Google Pay ou Samsung Pay.</p>
+        <p>La vue doit présenter donc une interface dans le cas ou aucune carte n'est enregistré avec le profil sur
+            l'appareil. Une interface dans le cas ou une carte est enregistré mais pas présente dans les Wallet. Une
+            interface où tout est bien ajouté avec les informations de la dernière utilisation, la consommation du mois,
+            etc.</p>
+        <p>La vue doit permettre d’accéder à la vue QR CODE / Saisie manuel</p>
+    </div>
+
+    <div>
+        <h3>Vue QR CODE / saisie manuelle → Information borne</h3>
+        <p>La vue QR CODE est une vue issue de la vue Carte The One qui permet de récupérer le numéro de la borne (EVSE
+            ID) selon deux possibilités : </p>
+        <ul>
+            <li>QR CODE</li>
+            <li>Saisie manuelle</li>
+        </ul>
+    </div>
+
+    <div>
+        <h3>QRCODE</h3>
+        <p>L'application va détecter le QR CODE d’une borne via l’appareil photo de l’utilisateur. Une fois détecté,
+            l’interface va sur la vue de Validation de la borne avant de charger. </p>
+    </div>
+    <div>
+        <h3>Saisie Manuelle</h3>
+        <p>L’utilisateur pourra entrer le code de la borne et valider. L’interface ira alors sur la vue de Validation de
+            la borne avant de charger.</p>
+    </div>
+
+    <div>
+        <h3>Vue Validation de la borne (avant de charger)</h3>
+        <p>Apres validation de la saisie du numéro de la borne, l’interface liste les informations suivantes : </p>
+        <ul>
+            <li>l’adresse de la borne</li>
+            <li>la puissance de la borne</li>
+            <li>le prix de la borne</li>
+        </ul>
+        <p>Cette interface doit permettre d’associer un véhicule de l’utilisateur pour pouvoir obtenir l’autorisation de
+            charge et donc de charge son véhicule.</p>
+        <p>Une fois le véhicule sélectionné, Il y aura le prix théorique de consommation du véhicule sélectionné par
+            rapport à la puissance de la borne.</p>
+        <p>Cette vue est un récapitulatif de la borne choisie par l’utilisateur avant de charger.</p>
+        <p>Elle possède enfin un bouton charger pour permettre la charge ou annuler pour revenir à la vue QR CODE /
+            saisie manuelle.</p>
+    </div>
+
+    <div>
+        <h3>Vue Charge de véhicule</h3>
+        <p>Apres vérification des informations de de la borne de charge , une petite interface d’attente de branchement
+            et d’autorisation de charge est initialisée. Les étapes sont les suivantes : </p>
+        <ol>
+            <li>
+                L’autorisation de charge est envoyé depuis l’application et une vue de chargement est lancée
+            </li>
+            <li>Une fois l’autorisation validée, une vue d’animation de charge est effectuée. Il y a les informations
+                suivantes :
+                <ul>
+                    <li>Le prix de la borne</li>
+                    <li>Le niveau de la batterie en live</li>
+                    <li>Le total du coup en live</li>
+                    <li>Le statut de la charge</li>
+                </ul>
+            </li>
+            <li>
+                On a la possibilité d’interrompre la charge à tout moment, ce qui doit calculer le total de la
+                consommation et du coût.
+            </li>
+            <li>Si l’autorisation n’est pas validé dans le temps imparti (10 secondes), une erreur est envoyé à
+                l’interface qui prévient l’utilisateur du refus de l’autorisation de charge.
+
+            </li>
+        </ol>
+        <p>Si l’autorisation est envoyé, et autorisé il faut brancher le véhicule. Tant qu’il n’est pas branché
+            (40secondes de timing), la charge ne peut pas s’executer. </p>
+    </div>
+</div>
+
+@code {
+
+}
