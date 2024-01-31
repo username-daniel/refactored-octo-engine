@@ -9,6 +9,15 @@ module.exports = {
         fontFamily: {
             'sans': ['Nunito Sans', ...defaultTheme.fontFamily.sans],
         },
+        listStyleType: {
+            none: 'none',
+            disc: 'disc',
+            decimal: 'decimal',
+            square: 'square',
+            roman: 'upper-roman',
+            alpha: 'lower-alpha',
+            circle: 'circle',
+        },
         extend: {
             lineHeight: {
                 "base": "1.125rem"
