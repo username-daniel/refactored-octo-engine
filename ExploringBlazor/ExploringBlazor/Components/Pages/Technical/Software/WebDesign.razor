@@ -1,0 +1,332 @@
+@page "/web-design"
+
+<PageTitle>Architecture web - e-Fusion</PageTitle>
+
+<AuthorTag Name="Kevin Vavelin" Date="Nov 10, 2023" Time="6"/>
+
+<div>
+    <p>
+        La solution web d’e-Fusion repose sur la technologie .Net de Microsoft. Avant de pouvoir travailler sur ce
+        projet, assurez-vous d’avoir .Net d’installer sur votre poste de travail :
+    </p>
+    <p>
+        <a href="https://dotnet.microsoft.com/en-us/download">
+            Download .NET (Linux, macOS, and Windows) (microsoft.com)
+        </a>
+    </p>
+    <p>
+        Actuellement, le projet est conçu avec .Net 7, et sera migré vers .Net 8.0 à la fin du Sprint V1. .Net 8.0 étant
+        une version LTS, elle nous permettra de construire la solution plus sereinement sans avoir à suivre le rythme
+        des sorties .Net, hors évolutions majeurs requise par e-Fusion.
+    </p>
+</div>
+
+<div>
+    <h2>Les IDE</h2>
+    <p>
+        Pour travailler sur le projet web, plusieurs environnement de développement sont préconnisés. Vous
+        pouvez choisir Visual Studio ou Visual Studio Code.
+    </p>
+    <p>
+        <a href="https://visualstudio.microsoft.com/downloads/">
+            Download Visual Studio Tools - Install Free for
+            Windows, Mac, Linux (microsoft.com)
+        </a>
+    </p>
+    <p>
+        La version Community est amplement suffisante pour travailler sur la solution.
+    </p>
+    <p>
+        <a href="https://code.visualstudio.com/Download">Download Visual Studio Code - Mac, Linux, Windows</a>
+    </p>
+    <p>
+        Visual Studio Code présente l’avantage d'être multi plateforme. Téléchargez donc la version
+        correspondant à votre système d’exploitation.
+    </p>
+    <p>
+        Si vous utilisez Visual Studio Code, voici la liste des extensions qui vous sont recommandés afin de
+        pouvoir travailler dans les meilleures conditions :
+    </p>
+    <p>
+        <a href="https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.csdevkit">
+            C# Dev Kit - Visual Studio Marketplace
+        </a>
+    </p>
+    <p>
+        <a href="https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.vscodeintellicode-csharp">
+            IntelliCode for C# Dev Kit - Visual Studio Marketplace
+        </a>
+    </p>
+    <p>
+        <a href="https://marketplace.visualstudio.com/items?itemName=ms-vscode.vscode-node-azure-pack">
+            Azure Tools - Visual Studio Marketplace
+        </a>
+    </p>
+    <p>
+        <a href="https://marketplace.visualstudio.com/items?itemName=ms-vscode.vscode-typescript-next">
+            JavaScript and TypeScript Nightly - Visual Studio Marketplace
+        </a>
+    </p>
+    <p>
+        <a href="https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.vscode-dotnet-pack">
+            .NET Extension Pack - Visual Studio Marketplace
+        </a>
+    </p>
+    <p>
+        <a href="https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss">
+            Tailwind CSS IntelliSense - Visual Studio Marketplace
+        </a>
+    </p>
+    <p>
+        <a href="https://marketplace.visualstudio.com/items?itemName=DominicVonk.vscode-resx-editor">
+            ResX Editor - Visual Studio Marketplace
+        </a>
+    </p>
+    <p>
+        <a href="https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.vscode-dotnet-runtime">
+            .NET Runtime Install Tool - Visual Studio Marketplace
+        </a>
+    </p>
+</div>
+
+<div>
+<h2>La solution</h2>
+<img src="" alt="img">
+
+<h3>EFusion.Admin</h3>
+<p>
+    Le projet EFusion.Admin est un projet Asp.Net Core MVC, un paradigme de programmation très répandu mais
+    également un des pattern sur lequel vous avez de grande chose de trouver de l’aide sur internet.
+</p>
+<p>
+    Ce projet constitue l’interface administration et supervision de l’ensemble de la solution par e-Fusion. Elle ne
+    doit donc pas être déployé au public.
+</p>
+<p>Ce projet utilise TailwindCSS pour écrire son style CSS, et intègre donc NPM à son sein.</p>
+
+<h3>EFusion.App</h3>
+<p>
+    Le projet EFusion.App est un projet Asp.Net Core MVC également. Il représente le dashboard B2B et B2C de la
+    solution e-Fusion. Beaucoup de code conçu pour des utilisateurs B2B est disponible pour les utilisateurs B2C,
+    la gestion des droits et des autorisations constitue donc une pièce majeur de ce projet.
+</p>
+<p>Ce projet utilise TailwindCSS pour écrire son style CSS, et intègre donc NPM à son sein.</p>
+
+<h3>EFusion.Client.Scripts</h3>
+<p>
+    Le projet EFusion.Client.Scripts est un projet console TypeScript. Il constitue l’ensemble des scripts éxécuté
+    coté client. Les dropdowns, les modals, les bannières de cookie, les animations, tout est regroupé dans ce
+    projet. Le but est de permettre à des développeurs à l’aise avec JavaScript/Typescript et désireux de créer des
+    interfaces avec des animations une aisance de travail qui ne perturbera pas les autres projets. Le projet
+    intègre la librarie GSAP pour mener à bien les animations qu’il désire réaliser.
+</p>
+
+
+<h3>EFusion.Core</h3>
+<p>
+    Le projet EFusion.Core est un projet qui regroupera l’ensemble des fonctionnalités Core d’e-Fusion.
+    L’initialisation des services, les middlewares, les filters, les protectionsToken, etc. C’est le projet qui
+    regroupera l’ensemble des couches afin que les projets EFusion.Admin EFusion.App EFusion.Web n’ai qu’à
+    référencer EFusion.Core pour obtenir l’ensemble des interfaces et data.
+</p>
+
+
+<h3>EFusion.Data</h3>
+<p>
+    Le projet EFusion.Data est un projet qui consistera à regrouper les entités utilisés par e-Fusion.
+    Essentiellement le modèle de la base de données d’e-Fusion ainsi que sa configuration et initalisation. Le
+    projet reposera sur Entity Framework pour assurer la liaison de ses entités et écrire le schéma de données de
+    façon simple et également permettre l’utilisation de LINQ pour simplifier les requêtes de type SQL.
+</p>
+
+
+<h3>EFusion.Infrastructure</h3>
+<p>
+    Le projet EFusion.Infrastructure est un projet qui regroupe toutes les interfaces, repository et services
+    d’e-Fusion. Les services ne doivent pas exposer l’accès à une propriété EFusion.Data. Seuls les repository
+    devront accéder au modèle, les services devront donc exposer les repository sans jamais autoriser leurs accès.
+</p>
+
+
+<h3>EFusion.Web</h3>
+<p>
+    Le projet EFusion.Web est un projet Asp.Net Core Razor Pages. Il est la face publique d’e-Fusion. Ce projet est
+    donc essentiellement le site internet qui sera accessible via l’url
+    <a href="https://efusion-ve.com/">
+        https://efusion-ve.com
+    </a>
+</p>
+<p>Ce projet utilise TailwindCSS pour écrire son style CSS, et intègre donc NPM à son sein.</p>
+
+<h3>Lancer le projet en local</h3>
+<p>
+    Si vous travaillez sur Visual Studio Code, assurez vous d’avoir .net d’installer sur votre poste de travail :
+</p>
+
+<pre class="bg-usual-400 dark:bg-usual-600">
+        <code class="bg-usual-400 dark:bg-usual-600 text-pretty">
+        dotnet --version
+        </code>
+    </pre>
+
+<p>
+    Vous aurez besoin de deux terminaux ouvert pour pouvoir travailler librement (une phase que nous améliorerons au
+    fil du temps).
+</p>
+<p>Dans le premier terminal, placez vous dans le dossier contenant votre fichier EFusion.sln</p>
+
+<pre class="bg-usual-400 dark:bg-usual-600">
+        <code class="bg-usual-400 dark:bg-usual-600 text-pretty">
+        cd {Votre dossier du repo cloné}/
+        </code>
+    </pre>
+
+<p>Une fois cette étape réalisée, assurez-vous d’avoir toutes les dépendances chargés : </p>
+<pre class="bg-usual-400 dark:bg-usual-600">
+        <code class="bg-usual-400 dark:bg-usual-600 text-pretty">
+        dotnet restore
+        </code>
+    </pre>
+
+<h3>Configurer la base de donnée</h3>
+<p>
+    Le projet lorsqu’il est lancé en local, utilise Entity Framework Core pour réaliser les opérations SQL. Vérifiez
+    donc que vous disposez bien d’Entity Framework Core Tools sur votre poste de travail :
+</p>
+
+<pre class="bg-usual-400 dark:bg-usual-600">
+        <code class="bg-usual-400 dark:bg-usual-600 text-pretty">
+        dotnet tool install --global dotnet-ef
+        </code>
+    </pre>
+
+<p>
+    Lorsque Entity Framework Core est installé sur votre machine, vous pouvez configurer la base de donnée grâce à
+    cette commande :
+</p>
+
+<pre class="bg-usual-400 dark:bg-usual-600">
+        <code class="bg-usual-400 dark:bg-usual-600 text-pretty">
+        dotnet ef database update -c EFusionDbContext -p ./src/EFusion.Data.csproj -s ./src/EFusion.Admin
+        </code>
+    </pre>
+
+<p>Si vous utilisez Visual Studio sur Windows, vous pouvez ouvrir le Package Manager Console, et utiliser la commande </p>
+
+<pre class="bg-usual-400 dark:bg-usual-600">
+        <code class="bg-usual-400 dark:bg-usual-600 text-pretty">
+        Update-Database
+        </code>
+    </pre>
+
+<img src="" alt="img">
+
+<h5 class="text-negative-500">
+    Veillez bien à avoir sélectionner le projet EFusion.Data par défaut et d’avoir le projet EFusion.Admin en
+    starter (celui-ci devrait être en gras dans votre Solution Explorer)
+</h5>
+
+<h3>Travailler sur les projets</h3>
+<p>Placez vous ensuite dans le dossier correspondant à votre tache (EFusion.Admin, EFusion.App ou EFusion.Web)</p>
+<p>
+    Ces projets utilisant TailwindCSS pour constituer leurs styles css, vous devez au préalable vous assurer que
+    tout les packages sont installés :
+</p>
+
+<pre class="bg-usual-400 dark:bg-usual-600">
+        <code class="bg-usual-400 dark:bg-usual-600 text-pretty">
+        npm install
+        </code>
+    </pre>
+
+
+<p>
+    Vous pouvez ensuite travailler en utilisant la fonction watch, cette fonction vous permettra d’activer le Hot
+    Reload de .Net et donc de recompiler votre code au fur et à mesure que vous y apportez des modifications :
+</p>
+
+<pre class="bg-usual-400 dark:bg-usual-600">
+        <code class="bg-usual-400 dark:bg-usual-600 text-pretty">
+        dotnet watch
+        </code>
+    </pre>
+
+<p>
+    Dans le second terminal, toujours en vous assurant d’etre dans le bon dossier de travail, lancez tailwindcss :
+</p>
+
+<pre class="bg-usual-400 dark:bg-usual-600">
+        <code class="bg-usual-400 dark:bg-usual-600 text-pretty">
+        npm run css:dev
+        </code>
+    </pre>
+
+<p>Une fois votre travail terminé et prêt à être déployé, minifiez votre css : </p>
+
+<pre class="bg-usual-400 dark:bg-usual-600">
+        <code class="bg-usual-400 dark:bg-usual-600 text-pretty">
+        npm run css:dist
+        </code>
+    </pre>
+
+<h3>Localiser la solution</h3>
+<p>
+    La solution e-Fusion doit supporter les langues française et anglaise. Pour cela, nous utiliserons le système de
+    traduction basique d’asp.net core, celui-ci consiste en un fichier .resx qui peut être lu directement avec
+    Visual Studio (même dans la version Community) et Visual Studio grâce à l'extension qui vous est recommandé.
+</p>
+<p>La localisation d’une application est soumise à des règles de structures que vous pouvez retrouver ici : </p>
+<p>https://learn.microsoft.com/en-us/aspnet/core/fundamentals/localization/provide-resource</p>
+<p>Make an ASP.NET Core app's content localizable </p>
+<p>Nous allons suivre cette nomenclature pour la localisation : </p>
+<p>Resources/[Dossier]/[Sous-Dossier]/[NomDuFichierSansExtension].[Lang].resx</p>
+<p>Par exemple, pour ajouter les traductions de la vue Index dans le projet EFusion.Web : </p>
+<p>Resources/Pages/Index.fr.resx</p>
+<p>Resources/Pages/Index.en.resx</p>
+<p>Concernant la nomenclature du nom de la clé, nous suivrons ce principe : </p>
+<p>NomDeLaVue.Element</p>
+<p>Par exemple, pour traduire le titre de la page (la valeur de &#64;ViewData["Title"] donc) : </p>
+<p>Index.Title sera la clé utilisé et Home la valeur pour la version anglaise et Accueil pour la version française.</p>
+<p>Et donc pour utiliser la traduction dans votre vue : </p>
+<pre class="bg-usual-400 dark:bg-usual-600">
+    <code class="bg-usual-400 dark:bg-usual-600 text-pretty">
+    &#64using Microsoft.AspNetCore.Mvc.Localization
+    
+    &#64inject IViewLocalizer Localizer
+    
+    &#64{
+        ViewData["Title"] = Localizer["Index.Title"];
+    }
+    
+    &lt;h2&gt;&#64ViewData["Title"].&lt;/h2&gt;
+    &lt;p&gt;&#64Localizer["Index.Hero.Headline"]&lt;/p&gt;
+    
+    </code>
+</pre>
+
+<h3>Tester Stripe et son intégration</h3>
+<p>Le projet e-Fusion utilise Stripe comme moyen de transaction monétaire. Chaque abonnement ou paiement passe donc par 
+    la plateforme Stripe. Des webhooks sont implémentés sur le projet qui permettent ainsi de suivre l’ensemble du 
+    processus Stripe. Si vous travaillez sur la partie facturation, vous devrez lancer le projet EFusion.Admin, et le 
+    proet EFusion.App donc. </p>
+<p>Afin de réceptionner l’ensemble des évènements géré par e-Fusion, et donc ainsi 
+    corriger d'éventuelles disfonctionnement ou bug, vous devrez receptionner les évènements grâce à l’outil StripeCLI.
+</p>
+<p>Vous pouvez télécharger StripeCLI depuis GitHub pour votre système d’exploitation ici : </p>
+<p>Releases · stripe/stripe-cli (github.com)</p>
+<p>Reportez vous à la documentation complète de StripeCLI pour savoir quoi faire et les commandes associés à votre 
+    action : Stripe CLI Reference</p>
+<p>Dans le cas d’e-Fusion, il y a de grandes chances que vous devrez vous assurer 
+    qu’un utilisateur soit bien créer avec Stripe en utilisant la commande : </p>
+<pre class="bg-usual-400 dark:bg-usual-600">
+    <code class="bg-usual-400 dark:bg-usual-600 text-pretty">
+    stripe get cs_xxxxxxxxxxxxx
+    </code>
+</pre>
+<p>xxxxx devra être remplacer par votre id utilisateur qui est contenu dans votre classe EFusionUser dans la propriété 
+    CustomerId</p>
+</div>
+
+@code {
+
+}
