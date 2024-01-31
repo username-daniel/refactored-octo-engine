@@ -1,0 +1,120 @@
+@page "/methodes"
+
+<PageTitle>Méthodologie de travail</PageTitle>
+
+<AuthorTag Name="Kevin Vavelin" Date="Nov 06, 2023" Time="4"/>
+
+<div>
+    <p>
+        Bienvenue sur e-Fusion ! Vous faîtes désormais parti de la dream team qui va révolutionner le monde de la
+        recharge de véhicule électrique.
+    </p>
+    <p>
+        e-Fusion est une startup toulousaine avec de grandes ambitions, et qui dit grandes ambitions dit processus de
+        fonctionnement conçu pour être entièrement pilotable à distance et permettre des évolutions qui vont de
+        concours avec l’innovation importante qui comporte l’industrie de l'énergie renouvelable.
+    </p>
+</div>
+
+<div>
+    <h2>Comment travailler sur les projets e-Fusion ?</h2>
+    <p>
+        1 semaine avant la fin de chaque sprint, nous analysons le backlog construit par le CTO et le CEO d’e-Fusion.
+        Ce backlog se rempli au fur et à mesure et permet aux équipes de préparer un sprint en conséquence et
+        déterminer les features ou tâches à réaliser.
+    </p>
+    <p>
+        Chaque projet est séparé en plusieurs repository et hébergé sur
+        GitHub de la
+        façon
+        suivante :
+    </p>
+    <ul class="space-y-2 font-medium list-disc">
+        <li>
+            efusion-ios : concerne la version iOS et l’application e-Fusion. Elle est réalisé en Swift et utilise
+            SwiftUI pour l'élaboration de son interface. Cela implique donc de connaître les paradigmes de
+            programmation de SwiftUI et le langage Swift pour pouvoir y travailler.
+        </li>
+        <li>
+            efusion-android : concerne la version Android et l’application e-Fusion. Elle est réalisé en Kotlin et
+            utilise Jetpack Compose pour l'élaboration de son interface. Du fait de l'écosystème Android, il se peut
+            que certaines choses ne puissent pas être possible avec Jetpack Compose, donc certaines parties prendront
+            le schéma classique Kotlin et XML.
+        </li>
+        <li>
+            efusion-web : concerne la version web de la solution e-Fusion. C’est le centre de la solution. Elle peut
+            sembler être une application Monolithique, mais en réalité ce sont plusieurs projets .Net qui seront
+            assemblés pour faire une énorme solution. Cette architecture permet à n’importe quel développeur de
+            travailler sur une partie sans jamais bloquer un autre projet.
+        </li>
+    </ul>
+    <p> </p>
+    <p>
+        Reportez vous aux fichiers d’architecture de chaque projet pour y comprendre leur structure et leur
+        organisation.
+    </p>
+</div>
+
+<div>
+    <h2>S’organiser</h2>
+    <p>
+        Chaque sprint, le CEO écrit ses EPIC, EPIC qui sont ensuite retranscrites en User Story par le CTO, découpé en
+        Task par les équipes de développement ou de design.
+    </p>
+    <p>
+        Cela nous donne donc un backlog que nous pouvons ensuite estimer et planifier dans un sprint. La durée du Sprint
+        est défini selon les objectifs commerciaux de la société e-Fusion, la date de fin est donc non négociable.
+    </p>
+    <p>
+        Lorsqu’une tâche est estimé par les équipes, chaque membre est conscient de son estimation et doit donc
+        travailler au respect de celle-ci. Un retard peut être accordé à condition de l’avoir notifié a minima quelques
+        jours avant (dans le cas d’une tache de moins de 3 jours, notifiez dès le moment où vous commencez à travailler
+        sur la tâche qu’il y a possibilité de retard et donc avoir de l’aide sur celle-ci).
+    </p>
+    <img src="" alt="img">
+    <p>Votre branche doit donc avoir pour nom : [ID DE LA TACHE]-Nom_de_la_tache</p>
+    <p>Le nom de la tache est libre, le plus important étant l’ID de votre tâche.</p>
+    <p>Lorsque vous faîtes votre commit, assurez vous d’avoir un message de commit formatté comme ceci : </p>
+    <pre class="bg-usual-400 dark:bg-usual-600"><code class="bg-usual-400 dark:bg-usual-600 text-pretty">
+    IDDELATACHE message #time 1d
+    </code></pre>
+    <p>
+        Pour ce qui est du temps, vous pouvez utiliser une syntaxe simple, par exemple, pour indiqué que vous avez
+        passer 1 jour 4h sur une tâche, votre commit prendra cette forme :
+    </p>
+    <pre class="bg-usual-400 dark:bg-usual-600"><code class="bg-usual-400 dark:bg-usual-600 text-pretty">
+    IDDELATACHE message #time 1d 4h
+    </code></pre>
+</div>
+
+<div>
+    <h2>Avant de valider une tâche et lancer une pull request </h2>
+    <p>Avant de valider votre tâche et déclencher une pull request, une checklist est mise en place. </p>
+    <img src="" alt="img">
+    <p>
+        Vous devez vous assurer que toutes les cases soient bien cochés. L'équipe de validation vérifiera en amont que
+        cette checklist soit bien complété avant d’envisager prendre en compte votre pull request.
+    </p>
+</div>
+
+<div>
+    <h2>La pull request</h2>
+    <p>
+        Une fois votre travail terminé, et que vous avez vérifié que vous avez écrit les tests unitaires ou
+        d’intégration correspondant lorsque ceux-ci sont possible (contactez votre hierarchie si vous n’en êtes pas
+        sur). Vous pouvez ouvrir une pull request :
+    </p>
+    <img src="" alt="img">
+    <p>
+        Assurez vous d’avoir mis phroca ou kevinvavelin en reviewer de votre pull request. Assignez vous à votre pull
+        request afin que vous puissiez recevoir les notifications en cas de commentaire.
+    </p>
+    <p>
+        Si votre pull request est accepté alors elle sera merge dans la branch main.
+    </p>
+    <h3 class="text-negative-500">AUCUNE MODIFICATION DANS AUCUNE BRANCH MAIN D’UN PROJET N’EST ACCEPTE</h3>
+</div>
+
+@code {
+
+}
