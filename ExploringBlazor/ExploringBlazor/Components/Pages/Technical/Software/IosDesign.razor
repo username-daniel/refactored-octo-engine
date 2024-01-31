@@ -1,0 +1,85 @@
+@page "/ios-design"
+
+<PageTitle>Architecture iOS - e-Fusion</PageTitle>
+
+<AuthorTag Name="Kevin Vavelin" Date="Oct 24, 2023" Time="3"/>
+
+<div>
+    <p>L’application iOS est conçu avec SwiftUI pour son interface et Swift comme langage de programmation. </p>
+    <p>La structure racine du projet se présente comme ceci : </p>
+    <img src="" alt="img">
+    <p>
+        Le fichier avec l’extension .xcodeproj représente le fichier utilisé par le logiciel Xcode pour ouvrir
+        le projet dans celui-ci.
+    </p>
+    <p>
+        Le dossier EFusion, contient l’ensemble des codes sources et vues de l’application iOS ainsi que ses
+        extensions.
+    </p>
+    <p>Le dossier EFusionTests, contient les tests unitaires de l’application iOS ainsi que ses extensions.</p>
+    <p>
+        Le dossier EFusionUITests, content les tests d’intégration de l’interface. Elle permet de prendre des snapshots
+        des vues et tester l’accésibilité et les couleurs etc.
+    </p>
+</div>
+
+<div>
+    <h2>L’application iOS - Dossier EFusion</h2>
+    <img src="" alt="img">
+    <p>
+        Le dossier Assets.xcassets contient l’ensemble des images, couleurs, icones utilisé par l’application iOS.
+    </p>
+    <p class="text-negative-500">
+        Son
+        contenu ne doit être être modifié à la main et doit impérativement être modifié via Xcode
+    </p>
+    <p>
+        Exception sera faite si vous savez comment constitué le dossier et écrire les fichiers json servant à Xcode et
+        iOS de reconnaître ses éléments.
+    </p>
+    <p>
+        Le fichier Info.plist est le fichier qui contient toutes les informations de l’application. Son nom, ses
+        autorisations, le support des orientations, les identifiants des extensions, etc. C’est la carte d’identité de
+        l’application e-Fusion.
+    </p>
+    <p class="text-negative-500">
+        Il vous est formellement interdit de le modifier sans accord préalable de votre
+        hierarchie ! Si vous devez y apporter une modification, discutez en à votre hierarchie afin qu’ils puissent en
+        évaluer les risques et si l’action est nécessaire ou non.
+    </p>
+    <p>
+        Le fichier Localizable.xcstrings contient toutes les informations de traductions de l’application iOS. A ce
+        jour, juste le français et l’anglais est supporté. Le langage par défaut utilisé par l’application iOS est
+        l’anglais, cela veut dire que vous devez impérativement développer l’interface avec d’abord la langue anglaise
+        en tête. La nomenclature utilisé pour traduire l’application est celle-ci :
+    </p>
+
+    <ul>
+        <li>Nom de la vue</li>
+        <li>Element</li>
+        <li>Sous-elément</li>
+    </ul>
+    <p>
+        Cela nous donne donc des clés comme ceci : Charger.Title ou encore Charger.Name ou encore
+        Charger.Address.PostalCode
+    </p>
+    <p>
+        Le fichier InfoPlist.xcstrings contient les traductions des autorisations et des textes qui sont affichés par
+        le systeme. Les clés ne sont pas modifiable et sont géré par Xcode et iOS lui même, l’application étant
+        anglaise par defaut, seules les traductions devront être indiqué.
+    </p>
+    <p>
+        Une indication de votre progression est affiché dans votre interface si les traductions sont incomplètes, ou
+        alors que des clés ont été modifiés, et une indication également lorsque tout est bien traduit.
+    </p>
+
+    <img src="" alt="img">
+    <p>
+        Pour ce qui est du reste des vues, cela reste assez libre, hors le dossier Model, qui contiendra donc tous les
+        models utilisés par l’application.
+    </p>
+</div>
+
+@code {
+
+}
